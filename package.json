@@ -1,6 +1,25 @@
 {
   "dependencies": {
     "body-parser": "^1.19.2",
-    "express": "^4.17.3"
-  }
+    "express": "^4.17.3",
+    "pug": "^3.0.2"
+  },
+  "name": "the_complete_nodejs_maximilian-schwarzmuller",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandakchiragsuresh/The_complete_node_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chandakchiragsuresh/The_complete_node_project/issues"
+  },
+  "homepage": "https://github.com/chandakchiragsuresh/The_complete_node_project#readme",
+  "description": ""
 }
