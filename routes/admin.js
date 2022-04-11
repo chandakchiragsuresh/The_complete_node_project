@@ -6,7 +6,7 @@ const router = express.Router()
 
 const bodyParser = require('body-parser')
 
-const products = []
+const products = ['PUMA', 'NIKE', 'PEPE JEANS']
 
 router.use(bodyParser.urlencoded({extended : true}))
 
