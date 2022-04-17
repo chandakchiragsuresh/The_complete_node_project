@@ -6,19 +6,12 @@ const router = express.Router()
 
 const bodyParser = require('body-parser')
 
-const products = ['PUMA', 'NIKE', 'PEPE JEANS']
+const productController = require('../controllers/productController')
 
 router.use(bodyParser.urlencoded({extended : true}))
 
-router.get('/add-product', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'))
-})
+router.get('/add-product', productController.getAddController)
 
-router.post('/product',(req, res)=>{
-    const productName = req.body.productName
-    products.push(productName)
-    res.send(productName)
-})
+router.post('/product', productController.postAddController)
 
-module.exports = {router:router,
-                products:products}
+module.exports = {router:router}
