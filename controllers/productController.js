@@ -1,10 +1,12 @@
 const path = require('path')
-
-const products = ['PUMA', 'NIKE', 'PEPE JEANS']
+const { fetchAll } = require('../models/product')
+const Product = require('../models/product')
 
 //shop controller
 exports.shopController = (req, res)=>{
-    res.render('shop', {prods:products})
+    const products = Product.fetchAll((products)=>{
+        res.render('shop', {prods:products})
+    })
 }
 
 //admin controller
@@ -14,10 +16,7 @@ exports.getAddController = (req, res)=>{
 
 exports.postAddController = (req, res)=>{
     const productName = req.body.productName
-    products.push(productName)
-    res.send(productName)
+    const product = new Product(productName)
+    product.save()
+    res.redirect('/')
 } 
-
-
-
-exports.products = products
