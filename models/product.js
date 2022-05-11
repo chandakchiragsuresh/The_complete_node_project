@@ -6,7 +6,7 @@ const getProductFromFile = (cb)=>{
         fs.readFile(p,(err, filecontent)=>{
             if(err)cb([])
             cb(JSON.parse(filecontent))
-    })
+    })  
 }
 
 module.exports = class product{

@@ -1,30 +1,20 @@
 extends layout.pug
-
 block content
-     header.main-header  
-        if prods.length > 0
-            each val in prods    
-                    div.card.rounded-3.mb-4
-                        div.card-body.p-4
-                        div.row.d-flex.justify-content-between.align-items-center
-                            div.col-md-2.col-lg-2.col-xl-2
-                                img(src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/4/e/4e14b3dPMAPA52253102_1.jpg?rnd=20200526195200", alt="Cotton T-shirt", class="img-fluid rounded-3")
-                            div.col-md-3.col-lg-3.col-xl-3
-                                p.lead.fw-normal.mb-2 #{val.title}
-                                    p
-                                    span.text-muted Size:  M 
-                                    br
-                                    span.text-muted Color: Grey
-                            div.col-md-3.col-lg-3.col-xl-2.d-flex
-                        
-                                button.btn.btn-link.px-2(onclick="this.parentNode.querySelector('input[type=number]').stepDown()")    
-                                    i.fas.fa-minus
-                                input.form-control.form-control-sm(type="number", value="2", name="quantity", id="form1", min="0")
-                                
-                                button.btn.btn-link.px-2(onclick="this.parentNode.querySelector('input[type=number]').stepUp()")
-                                    i.fas.fa-plus
-                            div.col-md-3.col-lg-2.col-xl-2.offset-lg-1
-                                h5.mb-0 $499.00
-                            div.col-md-1.col-lg-1.col-xl-1.text-end
-                                a.text-danger(href="#!")             
+        main
+            if prods.length > 0
+                div.grid
+                    each val in prods
+                        article.card.product-item
+                            header.card__header
+                                h1.product__title #{val.title}
+                            div.card__image
+                                img(src="https://adn-static1.nykaa.com/nykdesignstudio-images/tr:w-160,/pub/media/catalog/product/4/e/4e14b3dPMAPA52253102_1.jpg?rnd=20200526195200", alt="Cotton T-shirt", class="img-fluid rounded-3", style='width:100px;height:100px;')
+                            div.card__content
+                                h2.product__price $19.99
+                                p.product__description A very interesting book about so many even more interesting things!
+                            div.card__actions
+                                button.btn Add to Cart
+            else 
+                h1 No Products Found!
+
 
